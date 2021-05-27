@@ -7,38 +7,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
-@Table(name="SystemPersonnels")
-public class SystemPersonnel extends User{
-
+@Table(name="ActivationCodeToEmployers")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ActivationCodeToEmployers extends ActivationCode{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
 	private int id;
 	
-	@Column(name="FirstName")
-	private String name;
-	
-	@Column(name="LastName")
-	private String lastName;
+	@Column(name="EmployerId")
+	private String employerId;
 	
 	
-	public SystemPersonnel() {
-		super();
-	}
-
-
-	public SystemPersonnel(int id, String name, String lastName) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.lastName = lastName;
-	}
-
-
-
 	
 }
